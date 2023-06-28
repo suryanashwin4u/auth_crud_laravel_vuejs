@@ -1,0 +1,34 @@
+how to install vue inside laravel:
+1.first install laravel:laravel new <project-name>.
+2.change into root directory
+3.install node modules:npm install 
+4.install vue:npm install vue@next vue-loader@next
+5.create a webpack.mix.js and add vue() function
+6.go to app.js and add following code in the beginning:
+import './bootstrap';
+import { createApp } from 'vue';
+import { App } from './App.vue';
+createApp(App).mount("#App");
+7.create a file App.vue inside resources/js folder and add following code:
+<template>
+    <div>
+        Home
+    </div>
+</template>
+8.go into welcome.blade.php and add following code:
+
+<link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+
+<body class="antialiased">
+    <div id="app">
+
+    </div>
+    <script src="{{ asset('js/app.js') }}"></script>
+</body>
+
